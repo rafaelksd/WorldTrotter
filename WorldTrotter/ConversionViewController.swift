@@ -60,4 +60,16 @@ class ConversionViewController: UIViewController {
             celsiusLabel.text = "???"
         }
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharacterIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let existingTextHasDEcimalSeparator = textField.text?.range(of: ".")
+        let replacementTextHasDEcimalSEparator = string.range(of: ".")
+        
+        if existingTextHasDEcimalSeparator != nil, replacementTextHasDEcimalSEparator != nil {
+            return false
+        }else{
+            return true
+        }
+    }
 }
